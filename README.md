@@ -7,6 +7,9 @@ This is a social media app that allows users to create posts, like and comment o
 - Follow other users
 - Chat with other users
 
+## System requirements
+- Python 3.8+
+
 ## Getting Started
 1. Clone the repository
 ```bash
