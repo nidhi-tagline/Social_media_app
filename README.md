@@ -27,20 +27,25 @@ python -m venv env
 source env/bin/activate
 ```
 
-4. Install the requirements.
+4. Create .env file by copying .env.example and add your environment variables.
+```bash
+cp .env.example .env
+```
+
+5. Install the requirements.
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Makemigrations and migrate
+6. Makemigrations and migrate
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-6. Run the development server
+7. Run the development server
 ```bash
 python manage.py runserver
 ```
 
-7. Open http://127.0.0.1:8000/ in your browser
+8. Open http://127.0.0.1:8000/ in your browser

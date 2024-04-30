@@ -34,18 +34,27 @@ ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS", "*"))
 
 
 # Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
+]
+
+INHOUSE_APPS = [
     "apis",
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + INHOUSE_APPS
+
+print("*" * 20, INSTALLED_APPS)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -83,8 +92,12 @@ WSGI_APPLICATION = "social_core.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("DB_USER"),
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT"),
     }
 }
 
