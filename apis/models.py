@@ -20,7 +20,7 @@ class User(AbstractUser):
 
 
 class Profile(BaseModel):
-    username = models.ForeignKey(User, on_delete=models.CASCADE, related_name="profile")
+    username = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     bio = models.CharField(max_length=200, blank=True, null=True)
     profile_pic = models.ImageField(upload_to="profile_pics/", default="default.png")
     DOB = models.DateField(blank=True, null=True)
