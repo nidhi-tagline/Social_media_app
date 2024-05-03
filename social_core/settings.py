@@ -49,7 +49,6 @@ THIRD_PARTY_APPS = [
 ]
 
 INHOUSE_APPS = [
-    "apis",
     "users",
 ]
 
